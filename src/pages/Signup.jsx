@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import { API_URL } from '../App'; // ✅ Import API URL
 
 const Signup = ({ onLogin }) => {
   const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ const Signup = ({ onLogin }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/signup', {
+      const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

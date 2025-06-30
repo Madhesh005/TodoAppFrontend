@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import { API_URL } from '../App'; // ✅ import the backend URL from env
 
 const Login = ({ onLogin }) => {
   const [formData, setFormData] = useState({
@@ -27,7 +27,7 @@ const Login = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
