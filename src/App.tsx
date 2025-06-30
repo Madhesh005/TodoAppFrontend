@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 // import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -9,6 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+
+// ✅ Added: API URL from .env
+export const API_URL = import.meta.env.VITE_API_URL;
 
 const queryClient = new QueryClient();
 
